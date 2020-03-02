@@ -1,0 +1,14 @@
+<form name="survey-form" action="/" method="POST">
+
+    ${classInfoData.map(item =>
+    `<p>${item.topic} - I am <strong>${item.status_title}</strong> at ${item.topic}
+        <select name="${item.topic}" id="">
+            ${topicStatusData.map(status => `
+            <option value="status.id">${status.status_title}</option>
+            `)}
+        </select>
+        <button type="submit">Rank Topic</button>
+    </p>`
+    ).join('')}
+
+</form>
